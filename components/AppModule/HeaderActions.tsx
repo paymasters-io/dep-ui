@@ -3,6 +3,7 @@ import CustomSelect, { Option } from "../CustomSelect";
 import { ReactSVG } from "react-svg";
 
 import ETHLogo from "assets/icons/mdi_ethereum.svg";
+import Link from "next/link";
 
 const HeaderActions = () => {
   const options: Option[] = [
@@ -19,9 +20,11 @@ const HeaderActions = () => {
   return (
     <div className="header-actions">
       <CustomSelect options={options} onSelect={() => {}} />
-      <button className="cta">
-        Create <span className="hidden md:inline-block">Paymaster</span>
-      </button>
+      <Link href={"/create-paymaster"}>
+        <button className="cta">
+          Create <span className="hidden md:inline-block">Paymaster</span>
+        </button>
+      </Link>
     </div>
   );
 };

@@ -4,33 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply  text-white;
+body .default {
+  /* @apply  ; */
 }
 
-#__next {
-  @apply relative;
+#__next > .default {
+  @apply relative text-white;
 }
 
-.body-bg {
+.def-bg {
   @apply absolute top-0 left-0 w-full h-full bg-paymasters-dark -z-10 overflow-hidden;
 }
 
 /* body background blurs */
-.body-bg::before,
-.body-bg::after {
+.def-bg::before,
+.def-bg::after {
   @apply absolute top-0 left-1/2 w-[30rem] h-[30rem] rounded-full;
   @apply blur-[18rem];
   @apply opacity-60;
   content: "";
 }
 
-.body-bg::before {
+.def-bg::before {
   @apply bg-secondary-purple;
-  @apply transform -translate-x-1/2 lg:-translate-x-[120%] ;
+  @apply transform -translate-x-1/2 lg:-translate-x-[120%];
 }
 
-.body-bg::after {
+.def-bg::after {
   @apply bg-milano-red;
   @apply transform -translate-x-1/2 translate-y-[140%] lg:translate-x-full lg:translate-y-0;
 }

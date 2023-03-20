@@ -1,29 +1,28 @@
 import Link from "next/link";
 import SiteLogo from "./SiteLogo";
 
-const SiteFooter = () => {
+const SiteFooter = ({ showLinksOnly = false }: { showLinksOnly?: boolean }) => {
   return (
-    <footer
-      className="site-footer site-section"
-      aria-label="site footer"
-    >
+    <footer className="site-footer site-section" aria-label="site footer">
       <div className="wrapper">
-        <section className="logo-form-section">
-          <SiteLogo />
-          <form className="newsletter-form">
-            <div className="form-header">Subscribe to our news letter</div>
-            <div className="form-group">
-              <div className="form-control">
-                <input
-                  className="form-input"
-                  type="text"
-                  placeholder="Enter your Email"
-                />
+        {!showLinksOnly && (
+          <section className="logo-form-section">
+            <SiteLogo />
+            <form className="newsletter-form">
+              <div className="form-header">Subscribe to our news letter</div>
+              <div className="form-group">
+                <div className="form-control">
+                  <input
+                    className="form-input"
+                    type="text"
+                    placeholder="Enter your Email"
+                  />
+                </div>
+                <button className="cta">Subscribe</button>
               </div>
-              <button className="cta">Subscribe</button>
-            </div>
-          </form>
-        </section>
+            </form>
+          </section>
+        )}
         <section className="links-section">
           <p className="copy">Ⓒ 2023 Paymasters. All rights reserved</p>
           <div className="links">

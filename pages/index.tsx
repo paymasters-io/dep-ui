@@ -6,6 +6,14 @@ import styles from "@/pages/index.module.css";
 import DefaultLayout from "layouts/Default";
 import { ReactElement } from "react";
 
+export const getStaticProps = () => {
+  return {
+    props: {
+      isDark: true,
+    },
+  };
+};
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -43,9 +51,7 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
       <main className="app-main">
-        <h1>
-          Coming Soon
-        </h1>
+        <h1>Coming Soon</h1>
       </main>
     </div>
   );
