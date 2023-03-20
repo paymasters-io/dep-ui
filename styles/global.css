@@ -9,7 +9,7 @@ body .default {
 }
 
 #__next > .default {
-  @apply relative text-white;
+  @apply relative dark:text-white;
 }
 
 .def-bg {
@@ -36,7 +36,7 @@ body .default {
 }
 
 .cta {
-  @apply p-2 px-6 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
+  @apply p-2 px-6 bg-paymasters-purple font-medium dark:text-paymasters-purple-50 rounded-md;
 }
 
 .cta.dark {
