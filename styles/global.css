@@ -36,7 +36,7 @@ body .default {
 }
 
 .cta {
-  @apply p-2 px-6 bg-paymasters-purple font-medium dark:text-paymasters-purple-50 rounded-md;
+  @apply p-2 px-6 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
 }
 
 .cta.dark {
@@ -48,7 +48,7 @@ body .default {
 }
 
 .cta.no-bg {
-  @apply bg-transparent;
+  @apply bg-transparent text-paymasters-purple;
 }
 
 .cta.none {
@@ -100,7 +100,10 @@ body .default {
 }
 
 .form-input[type="text"] {
-  @apply w-full p-3 px-4 bg-paymasters-dark text-white bg-black/30 border border-paymasters-dark-50 rounded-md;
+  @apply w-full p-3 px-4 bg-slate-50 dark:bg-paymasters-dark dark:text-white dark:bg-black/30 border border-slate-100 dark:border-paymasters-dark-50 rounded-md;
+}
+
+.form-input[type="text"].grad-border {
   border-style: solid;
   border-image: linear-gradient(
       234.49deg,
@@ -121,6 +124,47 @@ body .default {
 
 .form-group .cta {
   @apply flex items-center;
+}
+
+/* paymaster form */
+.paymaster-form .form-header {
+  @apply flex flex-col p-4 py-8 items-center border-b border-slate-200;
+}
+
+.steps-progress {
+  @apply flex items-center py-8;
+}
+
+.steps-progress .step {
+  @apply flex items-center;
+}
+
+.step .step-point {
+  @apply w-6 h-6 border border-paymasters-purple rounded-full;
+}
+
+.step .step-line {
+  @apply w-24 h-px border border-b border-b-paymasters-purple border-dashed;
+}
+
+.step.active .step-point {
+  @apply bg-paymasters-purple;
+}
+
+.form-step {
+  @apply flex flex-col gap-4 py-8 max-w-md m-auto;
+}
+
+.form-step-header {
+  @apply p-4;
+}
+
+.form-step .form-control {
+  @apply px-4;
+}
+
+.form-step .action-cont {
+  @apply flex gap-4 justify-between p-4;
 }
 
 /* Header actions */

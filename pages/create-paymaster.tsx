@@ -5,6 +5,7 @@ import styles from "@/pages/index.module.css";
 
 import DepLayout from "layouts/Dep";
 import { ReactElement } from "react";
+import PaymasterForm from "@/components/PaymasterFormModule";
 
 export const getStaticProps = () => {
   return {
@@ -21,7 +22,7 @@ export default function CreatePaymaster() {
         <title>Create Paymaster</title>
       </Head>
       <main className="app-main">
-        <h1>Coming Soon</h1>
+        <PaymasterForm />
       </main>
     </div>
   );
