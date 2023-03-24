@@ -1,22 +1,61 @@
+import { CheckIcon } from "@heroicons/react/24/outline";
 import { FormEvent, useState } from "react";
+import PaymasterNameStep from "./PaymasterNameStep";
 
 const PaymasterForm = () => {
   const [steps, setSteps] = useState([
     {
       name: "Paymaster name",
+      completed: false,
     },
     {
       name: "Meta data",
+      completed: false,
     },
     {
       name: "Access control rules",
+      completed: false,
     },
     {
       name: "Submit",
+      completed: false,
     },
   ]);
 
   const [activeStep, setActiveStep] = useState(0);
+
+  const [paymasterNameStepData, setPaymasterStepData] = useState({
+    name: "",
+  });
+
+  const handleUpdateContinue = (
+    step: number,
+    data: object,
+    goBack?: number | boolean
+  ) => {
+    console.log({
+      step,
+      data,
+      goBack,
+    });
+
+    switch (step) {
+      case 1:
+        setPaymasterStepData(data as { name: string });
+        break;
+    }
+
+    if (goBack) {
+      if (typeof goBack === "number") {
+        setActiveStep(goBack);
+      } else {
+        const prevStep = activeStep - 1;
+        setActiveStep(prevStep < 0 ? 0 : prevStep);
+      }
+    } else {
+      setActiveStep(activeStep + 1);
+    }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -42,9 +81,15 @@ const PaymasterForm = () => {
                       key={index}
                     >
                       <div
-                        className="step-point"
+                        className="step-point flex items-center justify-center p-1"
                         data-step-name={step.name}
-                      ></div>
+                      >
+                        {step.completed && <CheckIcon className="icon" />}
+
+                        <div className="text">
+                          <span>{step.name}</span>
+                        </div>
+                      </div>
                       {index < steps.length - 1 && (
                         <div className="step-line"></div>
                       )}
@@ -54,30 +99,12 @@ const PaymasterForm = () => {
               </div>
             </div>
           </header>
-          <section className="form-step active paymaster-name-step">
-            <div className="wrapper">
-              <header className="form-step-header">
-                <h3>
-                  Please provide a name for the Paymaster you are creating.
-                </h3>
-              </header>
-
-              <div className="form-body">
-                <div className="form-control">
-                  <input
-                    type="text"
-                    className="form-input"
-                    placeholder="Name"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="action-cont !justify-end">
-              <button type="button" className="cta">
-                Next
-              </button>
-            </div>
-          </section>
+          <PaymasterNameStep
+            active={activeStep == 0}
+            updateContinue={({ data, goBack }) =>
+              handleUpdateContinue(0, data, goBack)
+            }
+          />
         </div>
       </form>
     </div>

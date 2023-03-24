@@ -39,6 +39,10 @@ body .default {
   @apply p-2 px-6 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
 }
 
+.cta:disabled {
+  @apply bg-paymasters-purple-100 text-paymasters-purple-300 cursor-not-allowed;
+}
+
 .cta.dark {
   @apply bg-paymasters-dark;
 }
@@ -139,24 +143,47 @@ body .default {
   @apply flex items-center;
 }
 
+.step .text {
+  @apply relative -bottom-6 transform translate-y-1/2 text-sm text-center;
+}
+
 .step .step-point {
-  @apply w-6 h-6 border border-paymasters-purple rounded-full;
+  @apply relative w-32 h-24;
+}
+
+.step .step-point::after {
+  content: "";
+  @apply absolute w-6 h-6 border border-paymasters-purple rounded-full;
 }
 
 .step .step-line {
-  @apply w-24 h-px border border-b border-b-paymasters-purple border-dashed;
+  @apply relative w-24 ;
 }
 
-.step.active .step-point {
-  @apply bg-paymasters-purple;
+.step-line::after {
+  content: "";
+  @apply absolute left-1/2 w-[calc(100%+5rem)] h-px border border-b border-b-paymasters-purple border-dashed;
+  @apply transform -translate-x-1/2;
+}
+
+.step.active .step-point::after {
+  @apply border-2;
 }
 
 .form-step {
-  @apply flex flex-col gap-4 py-8 max-w-md m-auto;
+  @apply hidden flex-col gap-4 py-8;
+}
+
+.form-step.active {
+  @apply flex;
 }
 
 .form-step-header {
   @apply p-4;
+}
+
+.form-step > .wrapper {
+  @apply max-w-xl m-auto;
 }
 
 .form-step .form-control {
@@ -164,7 +191,7 @@ body .default {
 }
 
 .form-step .action-cont {
-  @apply flex gap-4 justify-between p-4;
+  @apply flex gap-4 justify-between w-full p-4 mt-32 max-w-3xl m-auto;
 }
 
 /* Header actions */
