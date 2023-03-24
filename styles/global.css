@@ -8,6 +8,10 @@ body .default {
   /* @apply  ; */
 }
 
+button:disabled {
+  @apply cursor-not-allowed;
+}
+
 #__next > .default {
   @apply relative dark:text-white;
 }
@@ -130,6 +134,31 @@ body .default {
   @apply flex items-center;
 }
 
+.custom-drag-drop {
+  @apply relative w-full;
+}
+
+.custom-drag-drop input[type="file"] {
+  @apply absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer;
+}
+
+.drag-drop-container {
+  @apply p-4 py-8 border border-dashed border-gray-200 rounded-lg;
+}
+
+.custom-drag-drop input[type="file"]:focus ~ .drag-drop-container,
+.drag-drop-container.active {
+  @apply border-paymasters-purple-600 bg-paymasters-purple-600/10;
+}
+
+.custom-drag-drop .drag-drop-container .drag-drop-content {
+  @apply flex flex-col items-center gap-4;
+}
+
+.drag-file-overlay {
+  @apply absolute top-0 left-0 w-full h-full z-20;
+}
+
 /* paymaster form */
 .paymaster-form .form-header {
   @apply flex flex-col p-4 py-8 items-center border-b border-slate-200;
@@ -153,11 +182,11 @@ body .default {
 
 .step .step-point::after {
   content: "";
-  @apply absolute w-6 h-6 border border-paymasters-purple rounded-full;
+  @apply absolute w-8 h-8 border border-paymasters-purple rounded-full;
 }
 
 .step .step-line {
-  @apply relative w-24 ;
+  @apply relative w-24;
 }
 
 .step-line::after {
@@ -168,6 +197,14 @@ body .default {
 
 .step.active .step-point::after {
   @apply border-2;
+}
+
+.step.completed .step-point::after {
+  @apply bg-paymasters-purple;
+}
+
+.step.completed .icon {
+  @apply text-paymasters-purple-50 z-[1] p-0.5;
 }
 
 .form-step {
