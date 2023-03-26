@@ -53,6 +53,8 @@ const CustomDragDrop = ({
 
   // remove file
   useEffect(() => {
+    console.log("removeFile", removeFile);
+    
     if (removeFile) {
       FileInput.current.value = "";
     }

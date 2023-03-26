@@ -44,6 +44,13 @@ const PaymasterLogoUploadStep = ({
     }
     generatePreview(file);
     setFile(file);
+    setRemoveFile(false);
+  };
+
+  const handleRemoveFile = () => {
+    setFile(null);
+    setPreviewURL("");
+    setRemoveFile(true);
   };
 
   const handleContinue = () => {
@@ -82,20 +89,6 @@ const PaymasterLogoUploadStep = ({
             updateFileUpload={handleUpdateFile}
             removeFile={removeFile}
           />
-          {file && (
-            <div className="form-images form-control">
-              <div className="form-image">
-                <div className="img-cont">
-                  <Image
-                    src={previewURL}
-                    alt="Preview"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
 
           <div className="uploaded-images-cont">
             {file && (
@@ -112,13 +105,11 @@ const PaymasterLogoUploadStep = ({
                   {previewURL && (
                     <div className="uploaded-image-overlay">
                       <button
-                        onClick={() => {
-                          setRemoveFile(true);
-                        }}
+                        onClick={handleRemoveFile}
                         type="button"
-                        className="cta w-icon !bg-white"
+                        className="cta w-icon"
                       >
-                        <XMarkIcon className="icon !text-primary-500" />
+                        <XMarkIcon className="icon" />
                       </button>
                     </div>
                   )}
