@@ -70,6 +70,11 @@ const PaymasterForm = () => {
             prevState[1].completed = true;
             return prevState;
           });
+        } else {
+          setSteps((prevState) => {
+            prevState[1].completed = false;
+            return prevState;
+          });
         }
 
       default:
