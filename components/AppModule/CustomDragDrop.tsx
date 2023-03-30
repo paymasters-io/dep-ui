@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { DragEvent, FormEvent, useEffect, useRef, useState } from "react";
+import add_photo_alternate_icon from "../../assets/icons/add_photo_alternate.svg";
 
 const CustomDragDrop = ({
   updateFileUpload,
@@ -54,7 +56,7 @@ const CustomDragDrop = ({
   // remove file
   useEffect(() => {
     console.log("removeFile", removeFile);
-    
+
     if (removeFile) {
       FileInput.current.value = "";
     }
@@ -72,13 +74,19 @@ const CustomDragDrop = ({
       />
       <label className={`drag-drop-container ${dragActive ? "active" : ""}`}>
         <div className="drag-drop-content">
+          <div className="img-cont">
+            <Image
+              src={add_photo_alternate_icon}
+              width={32}
+              height={32}
+              alt="add alternate icon"
+            />
+          </div>
           <div className="drag-drop-text">
-            <p>
-              <span className="text-primary-500 underline">
-                Click to upload
-              </span>{" "}
-              <span>or Drag and drop your file here</span>
+            <p className="font-bold text-paymasters-purple">
+              Tap or drag and drop to upload Image
             </p>
+            <span>PNG, JPEG</span>
           </div>
         </div>
       </label>
