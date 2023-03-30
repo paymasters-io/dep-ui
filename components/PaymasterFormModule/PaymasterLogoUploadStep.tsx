@@ -85,10 +85,12 @@ const PaymasterLogoUploadStep = ({
         </header>
 
         <div className="form-body">
-          <CustomDragDrop
-            updateFileUpload={handleUpdateFile}
-            removeFile={removeFile}
-          />
+          {!file && (
+            <CustomDragDrop
+              updateFileUpload={handleUpdateFile}
+              removeFile={removeFile}
+            />
+          )}
 
           <div className="uploaded-images-cont">
             {file && (
