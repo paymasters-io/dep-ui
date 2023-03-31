@@ -56,7 +56,7 @@ const PaymasterNameStep = ({
       <div className="action-cont !justify-end">
         <span>
           Already have a Paymaster?
-          <Link href="/create-paymaster"> Submit here.</Link>
+          <Link href="/submit-paymaster"> Submit here.</Link>
         </span>
         <button
           onClick={handleContinue}
