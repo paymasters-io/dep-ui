@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import CustomDragDrop from "../AppModule/CustomDragDrop";
 import Image from "next/image";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
-export type Continue = {
+export type PaymasterLogoUploadStepContinue = {
   data: {
     file: File | null;
     preview: string;
@@ -16,7 +17,7 @@ const PaymasterLogoUploadStep = ({
   updateContinue,
 }: {
   active: boolean;
-  updateContinue: (data: Continue) => void;
+  updateContinue: (data: PaymasterLogoUploadStepContinue) => void;
 }) => {
   const [file, setFile] = useState<File | null>(null);
   const [previewURL, setPreviewURL] = useState("");
@@ -133,6 +134,11 @@ const PaymasterLogoUploadStep = ({
         >
           Go Back
         </button>
+        <span>
+          Already have a Paymaster?
+          <Link href="/create-paymaster"> Submit here.</Link>
+        </span>
+
         <button
           onClick={handleContinue}
           disabled={!stateIsValid}

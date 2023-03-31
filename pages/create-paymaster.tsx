@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "@/pages/index.module.css";
 
 import DepLayout from "layouts/Dep";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import PaymasterForm from "@/components/PaymasterFormModule";
 
 export const getStaticProps = () => {
@@ -16,13 +16,18 @@ export const getStaticProps = () => {
 };
 
 export default function CreatePaymaster() {
+  const [resetKey, setResetKey] = useState(0);
+
+  const handleUpdateResetKey = (key: number) => {
+    setResetKey(key);
+  };
   return (
     <div className="app=page">
       <Head>
         <title>Create Paymaster</title>
       </Head>
       <main className="app-main">
-        <PaymasterForm />
+        <PaymasterForm key={resetKey} updateResetKey={handleUpdateResetKey} />
       </main>
     </div>
   );

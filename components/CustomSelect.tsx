@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 export type Option = {
   label: string;
-  value: string;
+  value: string | null;
   icon?: React.ReactNode;
 };
 

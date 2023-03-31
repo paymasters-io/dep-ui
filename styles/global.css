@@ -12,6 +12,10 @@ button:disabled {
   @apply cursor-not-allowed;
 }
 
+a {
+  @apply text-paymasters-purple;
+}
+
 #__next > .default {
   @apply relative dark:text-white;
 }
@@ -95,15 +99,19 @@ button:disabled {
 }
 
 .custom-select-trigger {
-  @apply flex gap-2 items-center !px-3 bg-black/20 rounded-md cursor-pointer;
+  @apply flex gap-2 items-center justify-between !px-3 w-full text-slate-600 dark:text-slate-50 bg-slate-100 dark:bg-black/20 border border-slate-200 dark:border-0 rounded-md cursor-pointer;
 }
 
 .custom-select-trigger .text {
   @apply hidden md:inline-block;
 }
 
+.custom-select-trigger .icon {
+  @apply text-slate-600 dark:text-slate-50;
+}
+
 .custom-select-options {
-  @apply absolute top-[calc(100%+1rem)] right-0 min-w-full py-2 bg-black/20 rounded-md;
+  @apply absolute top-[calc(100%+1rem)] right-0 min-w-full py-2 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-0 rounded-md;
   @apply backdrop-blur-md;
 }
 
@@ -111,8 +119,9 @@ button:disabled {
   @apply flex gap-2 items-center !px-3 cursor-pointer;
 }
 
-.form-input[type="text"] {
-  @apply w-full p-3 px-4 bg-slate-50 dark:bg-paymasters-dark dark:text-white dark:bg-black/30 border border-slate-100 dark:border-paymasters-dark-50 rounded-md;
+.form-input[type="text"],
+.form-input[type="number"] {
+  @apply w-full p-3 px-4 bg-slate-50 dark:bg-paymasters-dark dark:text-white dark:bg-black/30 border border-slate-200 dark:border-paymasters-dark-50 rounded-lg;
 }
 
 .form-input[type="text"].grad-border {
@@ -126,8 +135,51 @@ button:disabled {
     1;
 }
 
+.checkbox-input {
+  @apply cursor-pointer;
+}
+
+.checkbox-input label {
+  @apply relative flex items-center gap-4;
+}
+
+.checkbox-input input {
+  @apply hidden;
+}
+
+.checkbox-input .switch {
+  @apply inline-block;
+}
+
+.switch {
+  @apply relative flex items-center w-12 h-6 bg-paymasters-purple/20 rounded-full;
+  @apply grayscale;
+}
+
+.switch::after {
+  content: "";
+  @apply absolute top-1/2 left-0.5 w-5 h-5 bg-paymasters-purple rounded-full;
+  @apply transition-all;
+  @apply transform -translate-y-1/2;
+}
+
+.switch.active {
+  @apply filter-none;
+}
+.switch.active::after {
+  @apply transform translate-x-[calc(100%+0.25rem)];
+}
+
 .form-control {
   @apply grow flex flex-col gap-2;
+}
+
+.form-control.disabled {
+  @apply opacity-40 pointer-events-none;
+}
+
+.form-control.radio-control label{
+  @apply flex items-center gap-4;
 }
 
 .form-group {
@@ -228,7 +280,11 @@ button:disabled {
 }
 
 .form-step > .wrapper {
-  @apply max-w-xl m-auto;
+  @apply w-full max-w-xl m-auto;
+}
+
+.form-body {
+  @apply flex flex-col gap-8 my-4 w-full;
 }
 
 .form-step .form-control {
@@ -236,7 +292,7 @@ button:disabled {
 }
 
 .form-step .action-cont {
-  @apply flex gap-4 justify-between w-full p-4 mt-32 max-w-3xl m-auto;
+  @apply flex gap-24 items-center justify-between w-full p-4 mt-32 max-w-3xl m-auto;
 }
 
 .uploaded-images-cont {

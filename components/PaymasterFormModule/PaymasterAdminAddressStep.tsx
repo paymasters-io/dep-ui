@@ -1,74 +1,88 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export type PaymasterNameStepContinue = {
+export type PaymasterAdminAddressStepContinue = {
   data: {
-    name: string;
+    address: string;
   };
   goBack: boolean;
 };
 
-const PaymasterNameStep = ({
+const PaymasterAdminAddressStep = ({
   active,
   updateContinue,
 }: {
   active: boolean;
-  updateContinue: (data: PaymasterNameStepContinue) => void;
+  updateContinue: (data: PaymasterAdminAddressStepContinue) => void;
 }) => {
-  const [name, setName] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
   const [stateIsValid, setStateIsValid] = useState<boolean>(false);
 
   const checkStateValid = () => {
-    return name.trim().length > 0;
+    return address.trim().length > 0;
   };
 
   const handleContinue = () => {
     if (stateIsValid) {
-      updateContinue({ data: { name }, goBack: false });
+      updateContinue({ data: { address }, goBack: false });
     }
   };
 
   useEffect(() => {
     setStateIsValid(checkStateValid());
-  }, [name]);
+  }, [address]);
 
   return (
     <section
-      className={`form-step ${active ? "active" : ""} paymaster-name-step`}
+      className={`form-step ${
+        active ? "active" : ""
+      } paymaster-admin-address-step`}
     >
       <div className="wrapper">
         <header className="form-step-header">
-          <h3>Please provide a name for the Paymaster you are creating.</h3>
+          <h3>Pamaster admin address</h3>
         </header>
 
         <div className="form-body">
           <div className="form-control">
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
               type="text"
               className="form-input"
-              placeholder="Name"
+              placeholder="Validation Address"
             />
           </div>
         </div>
       </div>
-      <div className="action-cont !justify-end">
+      <div className="action-cont">
+        <button
+          className="cta no-bg"
+          onClick={() =>
+            updateContinue({
+              data: { address },
+              goBack: true,
+            })
+          }
+        >
+          Go Back
+        </button>
         <span>
           Already have a Paymaster?
           <Link href="/create-paymaster"> Submit here.</Link>
         </span>
+
         <button
           onClick={handleContinue}
           disabled={!stateIsValid}
-          type="button"
+          type="submit"
           className="cta"
         >
-          Next
+          Submit
         </button>
       </div>
     </section>
   );
 };
 
-export default PaymasterNameStep;
+export default PaymasterAdminAddressStep;
