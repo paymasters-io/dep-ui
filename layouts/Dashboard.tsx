@@ -6,7 +6,7 @@ import SideBar from "@/components/DashboardModule/SideBar";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="dashboard">
-      <SiteHeader fullWidth>
+      <SiteHeader fullWidth className="bg">
         <SiteLogo />
       </SiteHeader>
       <div className="body">

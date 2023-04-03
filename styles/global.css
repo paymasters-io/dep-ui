@@ -328,6 +328,10 @@ a {
   @apply sticky top-0 w-full p-6 px-4 border-b border-white/10 z-50;
 }
 
+.site-header.bg {
+  @apply dark:bg-paymasters-dark;
+}
+
 .site-header > .wrapper {
   @apply flex items-center justify-between gap-4 w-full m-auto max-w-7xl;
   /* @apply  flex items-center justify-between gap-4 p-4  w-full m-auto max-w-lg lg:max-w-[82rem] rounded-lg; */
@@ -558,7 +562,7 @@ a {
 }
 
 .dashboard .sidebar > .wrapper {
-  @apply sticky top-24 p-4 pr-0;
+  @apply sticky top-20 p-4 pr-0;
 }
 
 .sidebar .sidebar-btn {
@@ -582,11 +586,11 @@ a {
 }
 
 .dashboard-section {
-  @apply w-full;
+  @apply w-full py-4;
 }
 
 .dashboard-section > .wrapper {
-  @apply p-4;
+  @apply p-4 px-8;
 }
 
 .stats-section > .wrapper {

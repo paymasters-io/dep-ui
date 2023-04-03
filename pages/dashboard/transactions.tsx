@@ -39,7 +39,7 @@ const Transactions = () => {
     },
     {
       tnxHash: "0xaaf0f76c259c....",
-      paymentComplete: true,
+      paymentComplete: false,
       from: "0x0aaf0f76c343e259c....",
       to: "0x0aaf0f76c259c....",
       taxFee: "0.00220197",
@@ -53,14 +53,14 @@ const Transactions = () => {
     },
     {
       tnxHash: "0xaaf0f7343eff6c259c....",
-      paymentComplete: true,
+      paymentComplete: false,
       from: "0x0aaf0f76c259c....",
       to: "0x0aaf0f76c259c....",
       taxFee: "0.00220197",
     },
     {
       tnxHash: "0xaaf0f733fefe6c259c....",
-      paymentComplete: true,
+      paymentComplete: false,
       from: "0x0aaf0f76c259c....",
       to: "0x0aaf0f76c259c....",
       taxFee: "0.00220197",
@@ -126,17 +126,27 @@ const Transactions = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {transactions.map(({ tnxHash, from, to, taxFee }) => (
-                    <tr key={tnxHash} className="table-row">
-                      <th scope="row" className="table-header-cell">
-                        {tnxHash}
-                      </th>
-                      <td className="table-cell">{from}</td>
-                      <td className="table-cell">{to}</td>
-                      <td className="table-cell">{taxFee}</td>
-                      <td className="table-cell">{taxFee}</td>
-                    </tr>
-                  ))}
+                  {transactions.map(
+                    ({ tnxHash, from, to, taxFee, paymentComplete }) => (
+                      <tr key={tnxHash} className="table-row">
+                        <th scope="row" className="table-header-cell">
+                          <p>{tnxHash}</p>
+                          {paymentComplete && (
+                            <div className="status flex items-center gap-2 py-2">
+                              <span className="status-dot w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                              <span className="status-text text-xs font-light">
+                                Payment Complete
+                              </span>
+                            </div>
+                          )}
+                        </th>
+                        <td className="table-cell">{from}</td>
+                        <td className="table-cell">{to}</td>
+                        <td className="table-cell">{taxFee}</td>
+                        <td className="table-cell">{taxFee}</td>
+                      </tr>
+                    )
+                  )}
                 </tbody>
               </table>
             </div>
