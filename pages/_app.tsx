@@ -1,5 +1,7 @@
 import "@/styles/global.css";
 import type { AppProps } from "next/app";
+import type { AppType } from 'next/app';
+// import {trpc}
 import DefaultLayout from "layouts/Default";
 
 import { ReactElement, ReactNode, useEffect } from "react";
