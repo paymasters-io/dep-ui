@@ -325,7 +325,7 @@ a {
 }
 
 .site-header {
-  @apply sticky top-0 w-full p-6 px-4 dark:bg-paymasters-dark border-b border-white/10 z-50;
+  @apply sticky top-0 w-full p-6 px-4 border-b border-white/10 z-50;
 }
 
 .site-header > .wrapper {
