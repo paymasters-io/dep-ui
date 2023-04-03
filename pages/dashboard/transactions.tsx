@@ -127,7 +127,7 @@ const Transactions = () => {
                 </thead>
                 <tbody>
                   {transactions.map(({ tnxHash, from, to, taxFee }) => (
-                    <tr className="table-row">
+                    <tr key={tnxHash} className="table-row">
                       <th scope="row" className="table-header-cell">
                         {tnxHash}
                       </th>
