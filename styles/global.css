@@ -589,6 +589,37 @@ a {
   @apply flex items-center gap-4;
 }
 
+.paymaster-option {
+  @apply grid grid-cols-2 gap-6 bg-transparent border border-white/10;
+}
+
+.paymaster-option-header {
+  @apply !items-start;
+}
+
+.paymaster-option .content {
+  @apply flex justify-between gap-4 pl-8 border-l border-white/10;
+}
+
+.paymaster-option .requirements summary {
+  @apply flex items-center gap-2 text-paymasters-purple font-semibold cursor-pointer;
+}
+
+.paymaster-option .requirements[open] summary {
+  @apply pb-4;
+}
+.paymaster-option .requirements summary .icon.up {
+  @apply hidden;
+}
+
+.paymaster-option .requirements[open] summary .icon.down {
+  @apply hidden;
+}
+
+.paymaster-option .requirements[open] summary .icon.up {
+  @apply !block;
+}
+
 .dashboard > .body {
   @apply flex;
 }
