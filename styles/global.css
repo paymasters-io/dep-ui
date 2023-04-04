@@ -123,11 +123,13 @@ a {
   @apply flex gap-2 items-center !px-3 cursor-pointer;
 }
 
+.form-input[data-type="text"],
 .form-input[type="text"],
 .form-input[type="number"] {
   @apply w-full p-3 px-4 bg-slate-50 dark:bg-paymasters-dark dark:text-white dark:bg-black/10 border border-slate-200 dark:border-[#C9CED1]/40 rounded-lg;
 }
 
+.form-input[data-type="text"].grad-border,
 .form-input[type="text"].grad-border {
   border-style: solid;
   border-image: linear-gradient(
@@ -137,6 +139,14 @@ a {
       rgba(255, 255, 255, 0) 93.51%
     )
     1;
+}
+
+.input-cont {
+  @apply flex items-center gap-4;
+}
+
+.input-cont input {
+  @apply bg-transparent outline-none border-0 w-full rounded-md;
 }
 
 .input-group {
@@ -384,11 +394,13 @@ a {
 }
 
 /* site sections */
-.site-section {
+.site-section,
+.app-section {
   @apply w-full py-32 px-4 lg:px-12;
 }
 
-.site-section > .wrapper {
+.site-section > .wrapper,
+.app-section > .wrapper {
   @apply relative w-full m-auto max-w-lg lg:max-w-7xl;
   @apply h-full;
 }
@@ -555,6 +567,26 @@ a {
     drop-shadow(14.0966px 11.7472px 39.9404px rgba(0, 0, 0, 0.1))
     drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
   transform: rotate(-15deg);
+}
+
+.app-section {
+  @apply py-8;
+}
+
+.app-section .app-section-header {
+  @apply mb-4;
+}
+
+.paymaster-card {
+  @apply p-7 py-6 bg-[#D9D9D940] rounded-xl;
+}
+
+.paymaster-card > .wrapper {
+  @apply flex items-center justify-between gap-4;
+}
+
+.paymaster-card .paymaster-card-header {
+  @apply flex items-center gap-4;
 }
 
 .dashboard > .body {
