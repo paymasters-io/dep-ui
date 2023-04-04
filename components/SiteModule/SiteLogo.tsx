@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logoIMG from "assets/img/paymaster-logo.svg";
+import logoIMG from "../../assets/img/paymaster-logo.svg";
 import Link from "next/link";
 
 const SiteLogo = () => {

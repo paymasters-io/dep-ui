@@ -223,6 +223,7 @@ a {
 .paymaster-form .form-header {
   @apply flex flex-col p-4 py-8 items-center border-b border-slate-200;
 }
+ 
 
 .steps-progress {
   @apply flex items-center py-8;

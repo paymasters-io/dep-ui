@@ -4,8 +4,6 @@ import SiteHeader from "@/components/SiteModule/SiteHeader";
 import SiteLogo from "@/components/SiteModule/SiteLogo";
 import SiteNav from "@/components/SiteModule/SiteNav";
 
-
-
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="default">
