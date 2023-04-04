@@ -125,7 +125,7 @@ a {
 
 .form-input[type="text"],
 .form-input[type="number"] {
-  @apply w-full p-3 px-4 bg-slate-50 dark:bg-paymasters-dark dark:text-white dark:bg-black/30 border border-slate-200 dark:border-paymasters-dark-50 rounded-lg;
+  @apply w-full p-3 px-4 bg-slate-50 dark:bg-paymasters-dark dark:text-white dark:bg-black/10 border border-slate-200 dark:border-[#C9CED1]/40 rounded-lg;
 }
 
 .form-input[type="text"].grad-border {
@@ -137,6 +137,10 @@ a {
       rgba(255, 255, 255, 0) 93.51%
     )
     1;
+}
+
+.input-group {
+  @apply flex gap-2;
 }
 
 .checkbox-input {
