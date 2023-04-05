@@ -268,16 +268,18 @@ const Plugins = () => {
       <main className="main">
         <section className="dashboard-section stats-section">
           <div className="wrapper">
-            <StatCard
-              title={pluginsStat.title}
-              contentText={pluginsStat.transactionCount.toString()}
-              rateInfo={pluginsStat.rate}
-            />
-            <StatCard
-              title={feesStat.title}
-              contentText={feesStat.fees.toString()}
-              rateInfo={feesStat.rate}
-            />
+            <div className="stats-group">
+              <StatCard
+                title={pluginsStat.title}
+                contentText={pluginsStat.transactionCount.toString()}
+                rateInfo={pluginsStat.rate}
+              />
+              <StatCard
+                title={feesStat.title}
+                contentText={feesStat.fees.toString()}
+                rateInfo={feesStat.rate}
+              />
+            </div>
           </div>
         </section>
         <section className="dashboard-section plugins-section">
