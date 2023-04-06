@@ -107,7 +107,7 @@ export default function Home() {
         <section className="app-section">
           <div className="wrapper">
             <header className="app-section-header">
-              <h2>Active Paymaster</h2>
+              <h2 className="font-bold">Active Paymaster</h2>
             </header>
             <article className="paymaster-card">
               <div className="wrapper">
