@@ -46,7 +46,7 @@ export const PluginSetting = ({
               </label>
             </div>
           </div>
-          <p className="description">{description}</p>
+          <p className="description text-[#FFFFFF99]">{description}</p>
         </header>
         {active && (
           <>

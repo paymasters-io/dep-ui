@@ -333,7 +333,7 @@ a {
 }
 
 /* Header actions */
-.header-actions ul{
+.header-actions ul {
   @apply flex items-center gap-6;
 }
 
@@ -648,7 +648,7 @@ a {
 }
 
 .users-section {
-  @apply border-l border-[#8998B933]
+  @apply border-l border-[#8998B933];
 }
 
 .users-list {
@@ -664,10 +664,10 @@ a {
 }
 
 .dashboard-footer .links {
-  @apply  flex items-center gap-5;
+  @apply flex items-center gap-5;
 }
 
-.dashboard-footer .links li a{
+.dashboard-footer .links li a {
   @apply text-white;
 }
 
@@ -688,7 +688,6 @@ a {
 .dashboard-section-header {
   @apply mb-4;
 }
-
 
 .paymaster-info-section {
   @apply !p-0 border-b border-[#292E47];
@@ -716,7 +715,9 @@ a {
 }
 
 .stats-group {
-  @apply flex flex-wrap gap-4;
+  /* @apply flex flex-wrap gap-4; */
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 }
 
 .stats-group li {

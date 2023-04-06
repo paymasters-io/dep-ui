@@ -7,7 +7,7 @@ const SiteLogo = () => {
     <Link href={"/"}>
       <div className="site-logo">
         <Image src={logoIMG} width={28} height={28} alt="Paymaster Logo" />
-        <span className="logo-text">Paymasters</span>
+        <span className="logo-text dark:text-white">Paymasters</span>
       </div>
     </Link>
   );
