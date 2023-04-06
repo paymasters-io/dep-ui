@@ -48,7 +48,7 @@ a {
 }
 
 .cta {
-  @apply p-2 px-6 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
+  @apply p-2 px-8 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
 }
 
 .cta:disabled {
@@ -401,7 +401,7 @@ a {
 
 .site-section > .wrapper,
 .app-section > .wrapper {
-  @apply relative w-full m-auto max-w-lg lg:max-w-7xl;
+  @apply relative w-full m-auto max-w-lg lg:max-w-5xl;
   @apply h-full;
 }
 
@@ -577,7 +577,6 @@ a {
   @apply mb-4;
 }
 
-
 .paymaster-card {
   @apply p-7 py-6 bg-[#D9D9D940] rounded-xl;
 }
@@ -630,7 +629,7 @@ a {
 }
 
 .dashboard .sidebar > .wrapper {
-  @apply sticky top-20 p-4 pr-0;
+  @apply sticky top-24 p-4 pr-0;
 }
 
 .sidebar .sidebar-btn {
@@ -649,6 +648,30 @@ a {
   @apply bg-[#1F2238];
 }
 
+.users-section {
+  @apply border-l border-[#8998B933]
+}
+
+.users-list {
+  @apply flex flex-col gap-4;
+}
+
+.dashboard-footer {
+  @apply p-7 px-8 border-t border-[#292E47];
+}
+
+.dashboard-footer > .wrapper {
+  @apply flex items-center justify-between;
+}
+
+.dashboard-footer .links {
+  @apply  flex items-center gap-5;
+}
+
+.dashboard-footer .links li a{
+  @apply text-white;
+}
+
 .dashboard main {
   @apply w-full;
 }
@@ -657,19 +680,22 @@ a {
   @apply w-full p-8;
 }
 
-.dashboard-section-header{
+.dashboard-section > .wrapper {
+  @apply max-w-7xl m-auto;
+}
+
+/* .dashboard-section >  */
+
+.dashboard-section-header {
   @apply mb-4;
 }
 
-.dashboard-section > .wrapper {
-  /* @apply p-4 px-8; */
-}
 
 .paymaster-info-section {
   @apply !p-0 border-b border-[#292E47];
 }
 
-.paymaster-info-section > .wrapper{
+.paymaster-info-section > .wrapper {
   @apply flex justify-between items-center;
 }
 
@@ -682,6 +708,13 @@ a {
   @apply p-10 bg-[#0C0E1F99];
 }
 
+.access-control-section {
+  @apply border-b border-[#292E47E5] py-[4.5rem];
+}
+
+.access-control-section .access-control-section-header {
+  @apply flex justify-between items-center mb-0;
+}
 
 .stats-group {
   @apply flex flex-wrap gap-4;

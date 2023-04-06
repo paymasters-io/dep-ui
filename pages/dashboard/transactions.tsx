@@ -17,35 +17,35 @@ export const getStaticProps = () => {
 
 export const transactions = [
   {
-    tnxHash: "0xaaf0f76c259c....",
+    tnxHash: "0xaaf0f6c259c....",
     paymentComplete: true,
     from: "0x0aaf0f76c259c....",
     to: "0x0aaf0f76c259c....",
     taxFee: "0.00220197",
   },
   {
-    tnxHash: "0xaaf0f76c259c....",
+    tnxHash: "0x0f76c259c....",
     paymentComplete: false,
     from: "0x0aaf0f76c343e259c....",
     to: "0x0aaf0f76c259c....",
     taxFee: "0.00220197",
   },
   {
-    tnxHash: "0xaaf0f76f3fefc259c....",
+    tnxHash: "0xaaf76f3fefc259c....",
     paymentComplete: true,
     from: "0x0aaf0f76c259c....",
     to: "0x0aaf0f76c259c....",
     taxFee: "0.00220197",
   },
   {
-    tnxHash: "0xaaf0f7343eff6c259c....",
+    tnxHash: "0xaaf0f7343eff69c....",
     paymentComplete: false,
     from: "0x0aaf0f76c259c....",
     to: "0x0aaf0f76c259c....",
     taxFee: "0.00220197",
   },
   {
-    tnxHash: "0xaaf0f733fefe6c259c....",
+    tnxHash: "0zaf0f733fe259c....",
     paymentComplete: false,
     from: "0x0aaf0f76c259c....",
     to: "0x0aaf0f76c259c....",

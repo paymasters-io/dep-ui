@@ -3,14 +3,17 @@ import CustomSelect, { Option } from "../CustomSelect";
 import { ReactSVG } from "react-svg";
 
 import ETHLogo from "assets/icons/mdi_ethereum.svg";
+import zkLogo from "assets/icons/zkSynk.png";
 import Link from "next/link";
+import Image from "next/image";
 
 const HeaderActions = () => {
   const options: Option[] = [
     {
-      label: "Etherum",
-      value: "eth",
-      icon: <ReactSVG src={ETHLogo.src} className="react-svg icon sm" />,
+      label: "zkSynk",
+      value: "zk",
+      icon: <Image src={zkLogo} width={24} height={24} alt="logo" />,
+      // icon: <ReactSVG src={ETHLogo.src} className="react-svg icon sm" />,
     },
     // {
     //   label: "Bitcoin",
