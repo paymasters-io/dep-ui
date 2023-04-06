@@ -10,7 +10,7 @@ import Image from "next/image";
 const HeaderActions = () => {
   const options: Option[] = [
     {
-      label: "zkSynk",
+      label: "zkSync",
       value: "zk",
       icon: <Image src={zkLogo} width={24} height={24} alt="logo" />,
       // icon: <ReactSVG src={ETHLogo.src} className="react-svg icon sm" />,
@@ -21,14 +21,25 @@ const HeaderActions = () => {
     // },
   ];
   return (
-    <div className="header-actions">
-      <CustomSelect options={options} onSelect={() => {}} />
-      <Link href={"/create-paymaster"}>
-        <button className="cta">
-          Create <span className="hidden md:inline-block">Paymaster</span>
-        </button>
-      </Link>
-    </div>
+    <nav className="header-actions">
+      <ul>
+        <li>
+          <CustomSelect options={options} onSelect={() => {}} />
+        </li>
+        <li>
+          <Link href={"/dashboard"}>
+            <button className="cta alt">Dashboard</button>
+          </Link>
+        </li>
+        <li>
+          <Link href={"/create-paymaster"}>
+            <button className="cta">
+              Create <span className="hidden md:inline-block">Paymaster</span>
+            </button>
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
