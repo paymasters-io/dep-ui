@@ -52,7 +52,7 @@ const ApprovalBaseFlow = ({
     >
       <div className="wrapper">
         <header className="form-step-header">
-          <h3>Do you wish to use user nonce to limit request?</h3>
+          <h3>Enable approval base flow?</h3>
         </header>
 
         <div className="form-body">

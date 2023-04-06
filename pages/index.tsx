@@ -154,7 +154,7 @@ export default function Home() {
         <section className="app-section paymasters-list-section">
           <div className="wrapper">
             <ul className="paymasters-list flex flex-col gap-4">
-              {paymasters.map((paymaster) => (
+              {paymasters.slice(0, 1).map((paymaster) => (
                 <li className="paymaster-item">
                   <article className="paymaster-option paymaster-card">
                     <header className="paymaster-option-header paymaster-card-header">

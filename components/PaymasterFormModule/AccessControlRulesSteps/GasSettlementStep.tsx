@@ -58,7 +58,7 @@ const GasSettlementStep = ({
     >
       <div className="wrapper">
         <header className="form-step-header">
-          <h3>Who settles the gas?</h3>
+          <h3>Who settles the gas fee?</h3>
         </header>
 
         <div className="form-body">
