@@ -28,7 +28,7 @@ export const PluginSetting = ({
 }) => {
   const [active, setActive] = useState(false);
   return (
-    <form action="" className="plugin-setting p-6 bg-[#010A1D] rounded-xl">
+    <form action="" className="plugin-setting p-8 bg-[#010A1D] rounded-xl">
       <div className="wrapper">
         <header className="plugin-setting-header ">
           <div className="title-wrapper flex gap-4 items-center mb-2">
@@ -93,7 +93,7 @@ const Plugins = () => {
               type="number"
               name="min-message-value"
               id="min-message-value"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -103,7 +103,7 @@ const Plugins = () => {
               type="number"
               name="call-data-selector"
               id="call-data-selector"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -113,7 +113,7 @@ const Plugins = () => {
               type="number"
               name="strict-destination"
               id="strict-destination"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -124,13 +124,13 @@ const Plugins = () => {
                 type="text"
                 name="call-data-params"
                 id="call-data-params"
-                className="form-input"
+                className="form-input max-w-xs"
               />
               <input
                 type="text"
                 name="call-data-params"
                 id="call-data-params"
-                className="form-input"
+                className="form-input max-w-xs"
               />
             </div>
           </div>
@@ -151,7 +151,7 @@ const Plugins = () => {
               type="number"
               name="price-feed"
               id="price-feed"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -161,7 +161,7 @@ const Plugins = () => {
               type="number"
               name="call-data-selector"
               id="call-data-selector"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -171,7 +171,7 @@ const Plugins = () => {
               type="number"
               name="strict-destination"
               id="strict-destination"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -191,7 +191,7 @@ const Plugins = () => {
               type="number"
               name="min-message-value"
               id="min-message-value"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -201,7 +201,7 @@ const Plugins = () => {
               type="number"
               name="call-data-selector"
               id="call-data-selector"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -211,7 +211,7 @@ const Plugins = () => {
               type="number"
               name="strict-destination"
               id="strict-destination"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -221,7 +221,7 @@ const Plugins = () => {
               type="number"
               name="strict-destination"
               id="strict-destination"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -231,7 +231,7 @@ const Plugins = () => {
               type="number"
               name="strict-destination"
               id="strict-destination"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="0"
             />
           </div>
@@ -251,7 +251,7 @@ const Plugins = () => {
               type="text"
               name="min-message-value"
               id="min-message-value"
-              className="form-input"
+              className="form-input max-w-xs"
               placeholder="input here"
             />
           </div>
@@ -268,19 +268,21 @@ const Plugins = () => {
       <main className="main">
         <section className="dashboard-section stats-section">
           <div className="wrapper">
-            <StatCard
-              title={pluginsStat.title}
-              contentText={pluginsStat.transactionCount.toString()}
-              rateInfo={pluginsStat.rate}
-            />
-            <StatCard
-              title={feesStat.title}
-              contentText={feesStat.fees.toString()}
-              rateInfo={feesStat.rate}
-            />
+            <div className="stats-group">
+              <StatCard
+                title={pluginsStat.title}
+                contentText={pluginsStat.transactionCount.toString()}
+                rateInfo={pluginsStat.rate}
+              />
+              <StatCard
+                title={feesStat.title}
+                contentText={feesStat.fees.toString()}
+                rateInfo={feesStat.rate}
+              />
+            </div>
           </div>
         </section>
-        <section className="dashboard-section plugins-section">
+        <section className="dashboard-section plugins-section !py-16">
           <div className="wrapper flex flex-col gap-8">
             {plugins.map((plugin) => (
               <PluginSetting

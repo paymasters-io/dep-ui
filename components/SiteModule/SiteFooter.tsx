@@ -1,9 +1,18 @@
 import Link from "next/link";
 import SiteLogo from "./SiteLogo";
 
-const SiteFooter = ({ showLinksOnly = false }: { showLinksOnly?: boolean }) => {
+const SiteFooter = ({
+  showLinksOnly = false,
+  className,
+}: {
+  showLinksOnly?: boolean;
+  className?: string;
+}) => {
   return (
-    <footer className="site-footer site-section" aria-label="site footer">
+    <footer
+      className={`site-footer site-section ${className}`}
+      aria-label="site footer"
+    >
       <div className="wrapper">
         {!showLinksOnly && (
           <section className="logo-form-section">

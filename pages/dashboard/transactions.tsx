@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 import filterIcon from "../../assets/icons/filter_list.svg";
 import Image from "next/image";
 import StatCard from "@/components/DashboardModule/StatCard";
+import TransactionsTable from "@/components/DashboardModule/TransactionsTable";
 
 export const getStaticProps = () => {
   return {
@@ -13,6 +14,44 @@ export const getStaticProps = () => {
     },
   };
 };
+
+export const transactions = [
+  {
+    tnxHash: "0xaaf0f6c259c....",
+    paymentComplete: true,
+    from: "0x0aaf0f76c259c....",
+    to: "0x0aaf0f76c259c....",
+    taxFee: "0.00220197",
+  },
+  {
+    tnxHash: "0x0f76c259c....",
+    paymentComplete: false,
+    from: "0x0aaf0f76c343e259c....",
+    to: "0x0aaf0f76c259c....",
+    taxFee: "0.00220197",
+  },
+  {
+    tnxHash: "0xaaf76f3fefc259c....",
+    paymentComplete: true,
+    from: "0x0aaf0f76c259c....",
+    to: "0x0aaf0f76c259c....",
+    taxFee: "0.00220197",
+  },
+  {
+    tnxHash: "0xaaf0f7343eff69c....",
+    paymentComplete: false,
+    from: "0x0aaf0f76c259c....",
+    to: "0x0aaf0f76c259c....",
+    taxFee: "0.00220197",
+  },
+  {
+    tnxHash: "0zaf0f733fe259c....",
+    paymentComplete: false,
+    from: "0x0aaf0f76c259c....",
+    to: "0x0aaf0f76c259c....",
+    taxFee: "0.00220197",
+  },
+];
 
 const Transactions = () => {
   const transactionStat = {
@@ -29,44 +68,6 @@ const Transactions = () => {
     rate: -1.48,
   };
 
-  const transactions = [
-    {
-      tnxHash: "0xaaf0f76c259c....",
-      paymentComplete: true,
-      from: "0x0aaf0f76c259c....",
-      to: "0x0aaf0f76c259c....",
-      taxFee: "0.00220197",
-    },
-    {
-      tnxHash: "0xaaf0f76c259c....",
-      paymentComplete: false,
-      from: "0x0aaf0f76c343e259c....",
-      to: "0x0aaf0f76c259c....",
-      taxFee: "0.00220197",
-    },
-    {
-      tnxHash: "0xaaf0f76f3fefc259c....",
-      paymentComplete: true,
-      from: "0x0aaf0f76c259c....",
-      to: "0x0aaf0f76c259c....",
-      taxFee: "0.00220197",
-    },
-    {
-      tnxHash: "0xaaf0f7343eff6c259c....",
-      paymentComplete: false,
-      from: "0x0aaf0f76c259c....",
-      to: "0x0aaf0f76c259c....",
-      taxFee: "0.00220197",
-    },
-    {
-      tnxHash: "0xaaf0f733fefe6c259c....",
-      paymentComplete: false,
-      from: "0x0aaf0f76c259c....",
-      to: "0x0aaf0f76c259c....",
-      taxFee: "0.00220197",
-    },
-  ];
-
   return (
     <>
       <Head>
@@ -75,16 +76,18 @@ const Transactions = () => {
       <main className="main">
         <section className="dashboard-section stats-section">
           <div className="wrapper">
-            <StatCard
-              title={transactionStat.title}
-              contentText={transactionStat.transactionCount.toString()}
-              rateInfo={transactionStat.rate}
-            />
-            <StatCard
-              title={feesStat.title}
-              contentText={feesStat.fees.toString()}
-              rateInfo={feesStat.rate}
-            />
+            <div className="stats-group">
+              <StatCard
+                title={transactionStat.title}
+                contentText={transactionStat.transactionCount.toString()}
+                rateInfo={transactionStat.rate}
+              />
+              <StatCard
+                title={feesStat.title}
+                contentText={feesStat.fees.toString()}
+                rateInfo={feesStat.rate}
+              />
+            </div>
           </div>
         </section>
         <section className="dashboard-section transactions-section">
@@ -104,7 +107,8 @@ const Transactions = () => {
                 </button>
               </div>
             </header>
-            <div className="relative overflow-x-auto">
+            <TransactionsTable transactions={transactions} />
+            {/* <div className="relative overflow-x-auto">
               <table className="dashboard-table">
                 <thead className="table-header">
                   <tr>
@@ -149,7 +153,7 @@ const Transactions = () => {
                   )}
                 </tbody>
               </table>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>

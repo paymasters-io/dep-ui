@@ -48,7 +48,7 @@ a {
 }
 
 .cta {
-  @apply p-2 px-6 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
+  @apply p-2 px-8 bg-paymasters-purple font-medium text-paymasters-purple-50 rounded-md;
 }
 
 .cta:disabled {
@@ -146,7 +146,7 @@ a {
 }
 
 .input-cont input {
-  @apply bg-transparent outline-none border-0 w-full rounded-md;
+  @apply !p-0 bg-transparent outline-none border-0 w-full rounded-md;
 }
 
 .input-group {
@@ -401,7 +401,7 @@ a {
 
 .site-section > .wrapper,
 .app-section > .wrapper {
-  @apply relative w-full m-auto max-w-lg lg:max-w-7xl;
+  @apply relative w-full m-auto max-w-lg lg:max-w-5xl;
   @apply h-full;
 }
 
@@ -570,7 +570,7 @@ a {
 }
 
 .app-section {
-  @apply py-8;
+  @apply py-8 max-w-none;
 }
 
 .app-section .app-section-header {
@@ -602,11 +602,11 @@ a {
 }
 
 .paymaster-option .requirements summary {
-  @apply flex items-center gap-2 text-paymasters-purple font-semibold cursor-pointer;
+  @apply flex items-center gap-2 h-full text-paymasters-purple font-semibold cursor-pointer;
 }
 
 .paymaster-option .requirements[open] summary {
-  @apply pb-4;
+  @apply pb-4 h-fit;
 }
 .paymaster-option .requirements summary .icon.up {
   @apply hidden;
@@ -625,11 +625,11 @@ a {
 }
 
 .dashboard .sidebar {
-  @apply flex flex-col gap-4 min-h-screen w-72 border-r border-paymasters-dark-50/10;
+  @apply shrink-0 flex flex-col gap-4 min-h-screen w-72 border-r border-paymasters-dark-50/10;
 }
 
 .dashboard .sidebar > .wrapper {
-  @apply sticky top-20 p-4 pr-0;
+  @apply sticky top-24 p-4 pr-0;
 }
 
 .sidebar .sidebar-btn {
@@ -648,20 +648,80 @@ a {
   @apply bg-[#1F2238];
 }
 
+.users-section {
+  @apply border-l border-[#8998B933]
+}
+
+.users-list {
+  @apply flex flex-col gap-4;
+}
+
+.dashboard-footer {
+  @apply p-7 px-8 border-t border-[#292E47];
+}
+
+.dashboard-footer > .wrapper {
+  @apply flex items-center justify-between;
+}
+
+.dashboard-footer .links {
+  @apply  flex items-center gap-5;
+}
+
+.dashboard-footer .links li a{
+  @apply text-white;
+}
+
 .dashboard main {
   @apply w-full;
 }
 
 .dashboard-section {
-  @apply w-full py-4;
+  @apply w-full p-8;
 }
 
 .dashboard-section > .wrapper {
-  @apply p-4 px-8;
+  @apply max-w-7xl m-auto;
 }
 
-.stats-section > .wrapper {
-  @apply flex gap-4;
+/* .dashboard-section >  */
+
+.dashboard-section-header {
+  @apply mb-4;
+}
+
+
+.paymaster-info-section {
+  @apply !p-0 border-b border-[#292E47];
+}
+
+.paymaster-info-section > .wrapper {
+  @apply flex justify-between items-center;
+}
+
+.paymaster-info-header > .wrapper {
+  @apply flex gap-4 p-8 mb-0;
+}
+
+.wallet-balance {
+  /* @apply w-48; */
+  @apply p-10 bg-[#0C0E1F99];
+}
+
+.access-control-section {
+  @apply border-b border-[#292E47E5] py-[4.5rem];
+}
+
+.access-control-section .access-control-section-header {
+  @apply flex justify-between items-center mb-0;
+}
+
+.stats-group {
+  @apply flex flex-wrap gap-4;
+}
+
+.stats-group li {
+  @apply grow;
 }
 
 .stat-card {
