@@ -191,7 +191,7 @@ export default function Home() {
                         </ul>
                       </details>
                       <div className="action-cont">
-                        <button className="cta">Use</button>
+                        <button className="cta !bg-paymasters-purple/20">Use</button>
                       </div>
                     </div>
                   </article>

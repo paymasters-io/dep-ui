@@ -170,22 +170,21 @@ a {
 }
 
 .switch {
-  @apply relative flex items-center w-12 h-6 bg-paymasters-purple/20 rounded-full;
-  @apply grayscale;
+  @apply relative flex items-center w-12 h-6 bg-[#C5C5C5]  rounded-full;
 }
 
 .switch::after {
   content: "";
-  @apply absolute top-1/2 left-0.5 w-5 h-5 bg-paymasters-purple rounded-full;
+  @apply absolute top-1/2 left-0.5 w-5 h-5 bg-[#898989] rounded-full;
   @apply transition-all;
   @apply transform -translate-y-1/2;
 }
 
 .switch.active {
-  @apply filter-none;
+  @apply bg-paymasters-purple/20;
 }
 .switch.active::after {
-  @apply transform translate-x-[calc(100%+0.25rem)];
+  @apply transform translate-x-[calc(100%+0.25rem)] bg-paymasters-purple;
 }
 
 .form-control {
