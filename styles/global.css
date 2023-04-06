@@ -60,7 +60,7 @@ a {
 }
 
 .cta.alt {
-  @apply border border-white bg-transparent text-white;
+  @apply border dark:border-white/20 bg-transparent dark:text-white;
 }
 
 .cta.no-bg {
@@ -333,8 +333,8 @@ a {
 }
 
 /* Header actions */
-.header-actions {
-  @apply flex items-center gap-4;
+.header-actions ul{
+  @apply flex items-center gap-6;
 }
 
 .site-header {

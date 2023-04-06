@@ -139,7 +139,7 @@ export default function Home() {
           </div>
         </section>
         <section className="app-section">
-          <div className="wrapper pb-16 border-b border-[#FFFFFF12]">
+          <div className="wrapper pb-8 border-b border-[#FFFFFF12]">
             <div className="form-control">
               <div
                 className="input-cont form-input grad-border"
@@ -153,6 +153,9 @@ export default function Home() {
         </section>
         <section className="app-section paymasters-list-section">
           <div className="wrapper">
+            <header className="app-section-header">
+              <h2 className="font-bold opacity-70">All Paymasters</h2>
+            </header>
             <ul className="paymasters-list flex flex-col gap-4">
               {paymasters.slice(0, 1).map((paymaster) => (
                 <li className="paymaster-item">
@@ -168,7 +171,7 @@ export default function Home() {
                       </figure>
                       <div className="paymaster-info">
                         <h3 className="font-bold">Zetachain</h3>
-                        <p className="text-xs">
+                        <p className="text-xs opacity-40">
                           The only public an decentralized blockchain that
                           enables message passing and...
                         </p>
@@ -176,10 +179,10 @@ export default function Home() {
                     </header>
                     <div className="content">
                       <details className="requirements">
-                        <summary className="list-none">
-                          <span>Requirements</span>
-                          <ChevronDownIcon className="down icon !text-paymasters-purple" />
-                          <ChevronUpIcon className="up icon !text-paymasters-purple" />
+                        <summary className="list-none ">
+                          <span className="text-[#E170FF]">Requirements</span>
+                          <ChevronDownIcon className="down icon !text-[#E170FF]" />
+                          <ChevronUpIcon className="up icon !text-[#E170FF]" />
                         </summary>
                         <ul className="requirements-list flex flex-col gap-2">
                           {paymaster.requirements.map((requirement) => (
@@ -191,7 +194,9 @@ export default function Home() {
                         </ul>
                       </details>
                       <div className="action-cont">
-                        <button className="cta !bg-paymasters-purple/20">Use</button>
+                        <button className="cta !bg-paymasters-purple/20">
+                          Use
+                        </button>
                       </div>
                     </div>
                   </article>
