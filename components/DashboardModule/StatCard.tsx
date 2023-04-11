@@ -10,9 +10,9 @@ const StatCard = ({
 }: {
   title: string;
   contentText: string;
-  rateInfo: number;
+  rateInfo?: number;
 }) => {
-  const isTrendPositive = rateInfo > 0;
+  const isTrendPositive = rateInfo && rateInfo >= 0;
   return (
     <article className="stat-card">
       <header className="stat-card-header">
@@ -22,17 +22,19 @@ const StatCard = ({
       <div className="stat-card-content">
         <p className="text">{contentText}</p>
 
-        <span className="rate-info">
-          <span className="text">
-            {isTrendPositive && "+"}
-            {rateInfo}%
+        {rateInfo !== undefined && (
+          <span className="rate-info">
+            <span className="text">
+              {isTrendPositive && "+"}
+              {rateInfo}%
+            </span>
+            {isTrendPositive ? (
+              <ArrowTrendingUpIcon className="icon" />
+            ) : (
+              <ArrowTrendingDownIcon className="icon" />
+            )}
           </span>
-          {isTrendPositive ? (
-            <ArrowTrendingUpIcon className="icon" />
-          ) : (
-            <ArrowTrendingDownIcon className="icon" />
-          )}
-        </span>
+        )}
       </div>
     </article>
   );

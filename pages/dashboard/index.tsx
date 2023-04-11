@@ -33,49 +33,49 @@ export const getStaticProps = () => {
 export const chartdata = [
   {
     date: "Jan 21",
-    Gas: 3890,
-    Transactions: 2338,
+    Gas: 1000,
+    Transactions: 2000,
   },
   {
     date: "Feb 21",
-    Gas: 3756,
-    Transactions: 3903,
+    Gas: 1000,
+    Transactions: 2000,
   },
-  {
-    date: "Mar 21",
-    Gas: 4722,
-    Transactions: 2999,
-  },
-  {
-    date: "Apr 21",
-    Gas: 7970,
-    Transactions: 5108,
-  },
-  {
-    date: "May 21",
-    Gas: 4475,
-    Transactions: 1812,
-  },
-  {
-    date: "Jun 21",
-    Gas: 6929,
-    Transactions: 5726,
-  },
-  {
-    date: "Aug 21",
-    Gas: 9929,
-    Transactions: 6726,
-  },
-  {
-    date: "Jun 21",
-    Gas: 7029,
-    Transactions: 5726,
-  },
-  {
-    date: "Aug 21",
-    Gas: 7629,
-    Transactions: 5726,
-  },
+  // {
+  //   date: "Mar 21",
+  //   Gas: 4722,
+  //   Transactions: 2999,
+  // },
+  // {
+  //   date: "Apr 21",
+  //   Gas: 7970,
+  //   Transactions: 5108,
+  // },
+  // {
+  //   date: "May 21",
+  //   Gas: 4475,
+  //   Transactions: 1812,
+  // },
+  // {
+  //   date: "Jun 21",
+  //   Gas: 6929,
+  //   Transactions: 5726,
+  // },
+  // {
+  //   date: "Aug 21",
+  //   Gas: 9929,
+  //   Transactions: 6726,
+  // },
+  // {
+  //   date: "Jun 21",
+  //   Gas: 7029,
+  //   Transactions: 5726,
+  // },
+  // {
+  //   date: "Aug 21",
+  //   Gas: 7629,
+  //   Transactions: 5726,
+  // },
 ];
 
 export const dataFormatter = (number: number) => {
@@ -93,29 +93,29 @@ const Dashboard = () => {
   const transactionStat = {
     id: "transactions",
     title: "All Transactions",
-    transactionCount: 721_000,
-    rate: 11.01,
+    transactionCount: 0,
+    rate: 0.0,
   };
 
   const gasStat = {
     id: "gas",
     title: "Gas",
-    gasCount: 367_000,
-    rate: 9.15,
+    gasCount: 0,
+    rate: 0.0,
   };
 
   const usersStat = {
     id: "users",
     title: "Users",
-    usersCount: 1_156,
-    rate: -0.56,
+    usersCount: 0,
+    rate: 0.0,
   };
 
   const pluginsStat = {
     id: "plugins",
     title: "Plugins enabled",
-    pluginsCount: 239_000,
-    rate: -1.48,
+    pluginsCount: "1 of 5",
+    // rate: -1.48,
   };
 
   const [selectedKpi, setSelectedKpi] = useState("Sales");
@@ -148,8 +148,8 @@ const Dashboard = () => {
                     <ChevronDownIcon className="icon" />
                   </h2>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. In vulputate ac
-                    elit.
+                    The only public an decentralized blockchain that enables
+                    message passing and...
                   </p>
                 </div>
               </div>
@@ -192,7 +192,6 @@ const Dashboard = () => {
                 <StatCard
                   title={pluginsStat.title}
                   contentText={pluginsStat.pluginsCount.toString()}
-                  rateInfo={pluginsStat.rate}
                 />
               </li>
             </ul>
@@ -207,14 +206,18 @@ const Dashboard = () => {
               </div>
             </header>
             <Card className="bg-[#010A1D] !border-none ring-transparent text-white">
-              <Flex alignItems="start" justifyContent="start" className="p-6 gap-16">
+              <Flex
+                alignItems="start"
+                justifyContent="start"
+                className="p-6 gap-16"
+              >
                 <div className="stat">
                   <span className="title">GAS</span>
-                  <p className="value text-2xl font-bold">6,000</p>
+                  <p className="value text-2xl font-bold">0.00<sub className="text-xs">gw</sub></p>
                 </div>
                 <div className="stat">
                   <span className="title">TRANSACTIONS</span>
-                  <p className="value text-2xl font-bold">1,450</p>
+                  <p className="value text-2xl font-bold">0</p>
                 </div>
               </Flex>
               <AreaChart

@@ -16,7 +16,7 @@ const TransactionsTable = ({
         <thead className="table-header">
           <tr>
             <th scope="col" className="table-cell">
-              Tnx Hash
+              TX Hash
             </th>
             <th scope="col" className="table-cell">
               From
@@ -25,10 +25,10 @@ const TransactionsTable = ({
               To
             </th>
             <th scope="col" className="table-cell">
-              Tax Fee
+              Value
             </th>
             <th scope="col" className="table-cell">
-              Tax Fee
+              TX Fee
             </th>
           </tr>
         </thead>
