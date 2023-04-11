@@ -36,7 +36,8 @@ const useApiCall = () => {
   const nonce = trpc.auth.authNonce.useQuery(undefined, { enabled: false });
   const _signOut = trpc.auth.authLogout.useQuery(undefined, { enabled: false });
   const signOut = () => _signOut.refetch();
-  const isSignedIn = trpc.auth.authVerified.useQuery().data?.ok;
+  const _isSignedIn = trpc.auth.authVerified.useQuery();
+  const isSignedIn = _isSignedIn.data?.ok;
   const sessionDetails = trpc.auth.authDetails.useQuery(undefined, {
     enabled: false,
   });
@@ -69,19 +70,11 @@ const useApiCall = () => {
   const _signIn = trpc.auth.authVerify.useMutation();
   const signIn = async () => {
     async function _createSession() {
-      console.log({
-        wallet,
-      });
-
       if (!wallet) return;
-
-      console.log({
-        wallet,
-      });
-
+      const signer = new Web3Provider(wallet.provider).getSigner();
       const message = new SiweMessage({
         domain: document.location.host,
-        address: wallet.accounts[0].address.toLocaleLowerCase(),
+        address: await signer.getAddress(),
         chainId: parseInt(connectedChain?.id as string, 16),
         uri: document.location.origin,
         version: "1",
@@ -90,15 +83,12 @@ const useApiCall = () => {
         issuedAt: nonce.data?.issuedAt,
         expirationTime: nonce.data?.expirationTime,
       });
-      console.log(parseInt(connectedChain?.id as string, 16), connectedChain);
-      const signature = await new Web3Provider(wallet.provider)
-        .getSigner()
-        .signMessage(message.prepareMessage());
-
-      await _signIn.mutateAsync({
+      const signature = await signer.signMessage(message.prepareMessage());
+      const mutResult = await _signIn.mutateAsync({
         signature,
         message: message as IssuedAtRequired,
       });
+      console.log(mutResult);
     }
 
     console.log({
@@ -135,6 +125,7 @@ const useApiCall = () => {
     getEntryWhere,
     getRawEntries,
     newEntry,
+    wallet,
   };
 };
 

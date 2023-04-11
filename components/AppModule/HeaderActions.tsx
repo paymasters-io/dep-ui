@@ -25,7 +25,7 @@ const HeaderActions = () => {
     // },
   ];
 
-  const { isSignedIn, signIn, signOut, getAuthSession } = useApiCall();
+  const { wallet, signIn, signOut, getAuthSession } = useApiCall();
 
   return (
     <nav className="header-actions">
@@ -34,7 +34,7 @@ const HeaderActions = () => {
           <CustomSelect options={options} onSelect={() => {}} />
         </li>
 
-        {isSignedIn ? (
+        {wallet ? (
           <>
             <li>
               <Link href={"/dashboard"}>
