@@ -5,6 +5,16 @@ import z from "zod";
 import { SiweMessage } from "siwe";
 import { Web3Provider } from "zksync-web3";
 
+interface IExecuteObjectType {
+  contract_address: string;
+  chainId: string;
+  name: string;
+  owner_address: string;
+  metadata: string;
+  verified?: boolean;
+  timestamp?: number;
+}
+
 interface ICallKey {
   id?: string;
   contract_address?: string;
@@ -17,7 +27,6 @@ interface IssuedAtRequired extends SiweMessage {
 
 const useApiCall = () => {
   const [{ wallet }, connect] = useConnectWallet();
-  const [{ accounts, provider }] = useWallets();
   const [{ connectedChain }] = useSetChain();
 
   // ##########     QUERIES      #############
@@ -60,10 +69,19 @@ const useApiCall = () => {
   const _signIn = trpc.auth.authVerify.useMutation();
   const signIn = async () => {
     async function _createSession() {
+      console.log({
+        wallet,
+      });
+
       if (!wallet) return;
+
+      console.log({
+        wallet,
+      });
+
       const message = new SiweMessage({
         domain: document.location.host,
-        address: accounts[0].address,
+        address: wallet.accounts[0].address.toLocaleLowerCase(),
         chainId: parseInt(connectedChain?.id as string, 16),
         uri: document.location.origin,
         version: "1",
@@ -73,7 +91,7 @@ const useApiCall = () => {
         expirationTime: nonce.data?.expirationTime,
       });
       console.log(parseInt(connectedChain?.id as string, 16), connectedChain);
-      const signature = await new Web3Provider(provider)
+      const signature = await new Web3Provider(wallet.provider)
         .getSigner()
         .signMessage(message.prepareMessage());
 
@@ -82,7 +100,17 @@ const useApiCall = () => {
         message: message as IssuedAtRequired,
       });
     }
+
+    console.log({
+      wallet,
+    });
+
     await connect();
+
+    console.log({
+      isSignedIn,
+    });
+
     if (!isSignedIn) {
       await nonce.refetch();
       await _createSession();
@@ -92,8 +120,8 @@ const useApiCall = () => {
   // ----    execute     ----
 
   const _apply = trpc.execute.apply.useMutation();
-  const executeObjectTypePartial = executeObjectType.required();
-  const newEntry = async (input: z.infer<typeof executeObjectTypePartial>) => {
+  // const executeObjectTypePartial = executeObjectType.required();
+  const newEntry = async (input: IExecuteObjectType) => {
     await _apply.mutateAsync(input);
   };
 
@@ -109,6 +137,5 @@ const useApiCall = () => {
     newEntry,
   };
 };
-
 
 export default useApiCall;

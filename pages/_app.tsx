@@ -8,6 +8,7 @@ import DefaultLayout from "layouts/Default";
 import { ReactElement, ReactNode, useEffect } from "react";
 import { NextPage } from "next";
 import { trpc } from "utils/trpc";
+import WalletConnectProvider from "./providers/WalletProvider";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -24,7 +25,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   useEffect(() => {
     document.documentElement.className = pageProps.isDark ? "dark" : "";
   });
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <WalletConnectProvider>
+      {getLayout(<Component {...pageProps} />)}
+    </WalletConnectProvider>
+  );
 }
 
 export default trpc.withTRPC(MyApp as AppType);

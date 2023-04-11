@@ -1,6 +1,6 @@
 import { httpBatchLink } from "@trpc/client";
 import { createTRPCNext } from "@trpc/next";
-import type { AppRouter } from "@paymasters-io/server/dist/trpc";
+import { AppRouter } from "@paymasters-io/server"
 
 import superjson from "superjson";
 

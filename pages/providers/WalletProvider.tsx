@@ -37,8 +37,8 @@ const options = init({
   chains,
   appMetadata: {
     name: "Paymasters.io",
-    icon,
-    logo,
+    icon: "/favicon-32x32.png",
+    logo: "/favicon-32x32.png",
     description:
       "EIP4337 paymaster management solution; enabling a web3 economy powered by gasless applications",
     recommendedInjectedWallets: [
@@ -60,8 +60,11 @@ const options = init({
   theme: "dark",
 });
 
-const walletConnectProvider = ({ children }: PropsWithChildren) => {
+const WalletConnectProvider = ({ children }: PropsWithChildren) => {
   return (
     <Web3OnboardProvider web3Onboard={options}>{children}</Web3OnboardProvider>
   );
 };
+
+
+export default WalletConnectProvider;

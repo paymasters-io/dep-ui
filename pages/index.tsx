@@ -157,8 +157,8 @@ export default function Home() {
               <h2 className="font-bold opacity-70">All Paymasters</h2>
             </header>
             <ul className="paymasters-list flex flex-col gap-4">
-              {paymasters.slice(0, 1).map((paymaster) => (
-                <li className="paymaster-item">
+              {paymasters.slice(0, 1).map((paymaster, i) => (
+                <li key={i} className="paymaster-item">
                   <article className="paymaster-option paymaster-card">
                     <header className="paymaster-option-header paymaster-card-header">
                       <figure className="img-cont shrink-0">
@@ -185,8 +185,8 @@ export default function Home() {
                           <ChevronUpIcon className="up icon !text-[#E170FF]" />
                         </summary>
                         <ul className="requirements-list flex flex-col gap-2">
-                          {paymaster.requirements.map((requirement) => (
-                            <li className="requirement flex gap-2">
+                          {paymaster.requirements.map((requirement, i) => (
+                            <li key={i} className="requirement flex gap-2">
                               <CheckCircleIcon className="icon !text-green-600" />
                               <span className="text">{requirement}</span>
                             </li>
