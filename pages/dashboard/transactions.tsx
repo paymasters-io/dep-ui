@@ -16,56 +16,56 @@ export const getStaticProps = () => {
 };
 
 export const transactions = [
-  {
-    tnxHash: "0xaaf0f6c259c....",
-    paymentComplete: true,
-    from: "0x0aaf0f76c259c....",
-    to: "0x0aaf0f76c259c....",
-    taxFee: "0.00220197",
-  },
-  {
-    tnxHash: "0x0f76c259c....",
-    paymentComplete: false,
-    from: "0x0aaf0f76c343e259c....",
-    to: "0x0aaf0f76c259c....",
-    taxFee: "0.00220197",
-  },
-  {
-    tnxHash: "0xaaf76f3fefc259c....",
-    paymentComplete: true,
-    from: "0x0aaf0f76c259c....",
-    to: "0x0aaf0f76c259c....",
-    taxFee: "0.00220197",
-  },
-  {
-    tnxHash: "0xaaf0f7343eff69c....",
-    paymentComplete: false,
-    from: "0x0aaf0f76c259c....",
-    to: "0x0aaf0f76c259c....",
-    taxFee: "0.00220197",
-  },
-  {
-    tnxHash: "0zaf0f733fe259c....",
-    paymentComplete: false,
-    from: "0x0aaf0f76c259c....",
-    to: "0x0aaf0f76c259c....",
-    taxFee: "0.00220197",
-  },
+  // {
+  //   tnxHash: "0xaaf0f6c259c....",
+  //   paymentComplete: true,
+  //   from: "0x0aaf0f76c259c....",
+  //   to: "0x0aaf0f76c259c....",
+  //   taxFee: "0.00220197",
+  // },
+  // {
+  //   tnxHash: "0x0f76c259c....",
+  //   paymentComplete: false,
+  //   from: "0x0aaf0f76c343e259c....",
+  //   to: "0x0aaf0f76c259c....",
+  //   taxFee: "0.00220197",
+  // },
+  // {
+  //   tnxHash: "0xaaf76f3fefc259c....",
+  //   paymentComplete: true,
+  //   from: "0x0aaf0f76c259c....",
+  //   to: "0x0aaf0f76c259c....",
+  //   taxFee: "0.00220197",
+  // },
+  // {
+  //   tnxHash: "0xaaf0f7343eff69c....",
+  //   paymentComplete: false,
+  //   from: "0x0aaf0f76c259c....",
+  //   to: "0x0aaf0f76c259c....",
+  //   taxFee: "0.00220197",
+  // },
+  // {
+  //   tnxHash: "0zaf0f733fe259c....",
+  //   paymentComplete: false,
+  //   from: "0x0aaf0f76c259c....",
+  //   to: "0x0aaf0f76c259c....",
+  //   taxFee: "0.00220197",
+  // },
 ];
 
 const Transactions = () => {
   const transactionStat = {
     id: "transactions",
     title: "All Transactions",
-    transactionCount: 721_000,
-    rate: 11.01,
+    transactionCount: 0,
+    rate: 0.00,
   };
 
   const feesStat = {
     id: "fees",
     title: "Total Fees",
-    fees: 239_000,
-    rate: -1.48,
+    fees: 0,
+    rate: 0.00,
   };
 
   return (

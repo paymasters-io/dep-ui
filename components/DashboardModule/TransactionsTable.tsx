@@ -56,6 +56,11 @@ const TransactionsTable = ({
           )}
         </tbody>
       </table>
+      {transactions.length === 0 && (
+        <div className="flex items-center justify-center h-64">
+          <p className="text-gray-400">No transactions yet</p>
+        </div>
+      )}
     </div>
   );
 };

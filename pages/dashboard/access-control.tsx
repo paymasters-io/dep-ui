@@ -32,8 +32,7 @@ const AccessControl = () => {
                 Max Nonce
               </h2>
               <p className="text-white/60">
-                plugin that enables gas offset when the transaction meets a
-                certain criteria
+                Limit request with the user account nonce
               </p>
             </header>
             <div className="form-control">
@@ -53,10 +52,7 @@ const AccessControl = () => {
               <h2 className="text-[#b7b8bf] font-semibold text-xl mb-2">
                 NFT Gate Contract{" "}
               </h2>
-              <p className="text-white/60">
-                plugin that enables gas offset when the transaction meets a
-                certain criteria
-              </p>
+              <p className="text-white/60">Limit request using an NFT</p>
             </header>
             <div className="form-control">
               <input
@@ -73,11 +69,10 @@ const AccessControl = () => {
           <div className="wrapper">
             <header className="dashboard-section-header">
               <h2 className="text-[#b7b8bf] font-semibold text-xl mb-2">
-                Validation Address
+                Strict destination
               </h2>
               <p className="text-white/60">
-                plugin that enables gas offset when the transaction meets a
-                certain criteria
+                List of allowed transaction destinations
               </p>
             </header>
             <div className="form-control">
@@ -86,7 +81,7 @@ const AccessControl = () => {
                 name="max-nonce"
                 id="max-nonce"
                 className="form-input max-w-xs"
-                placeholder="Address"
+                placeholder="Addresses separated by commas"
               />
             </div>
           </div>
@@ -98,8 +93,7 @@ const AccessControl = () => {
                 ERC20 gate
               </h2>
               <p className="text-white/60">
-                plugin that enables gas offset when the transaction meets a
-                certain criteria
+                Limit request using an ERC20 token
               </p>
             </header>
             <div className="form-control">

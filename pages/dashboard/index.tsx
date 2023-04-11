@@ -114,7 +114,7 @@ const Dashboard = () => {
   const pluginsStat = {
     id: "plugins",
     title: "Plugins enabled",
-    pluginsCount: "1 of 5",
+    pluginsCount: "0 of 5",
     // rate: -1.48,
   };
 
@@ -213,7 +213,7 @@ const Dashboard = () => {
               >
                 <div className="stat">
                   <span className="title">GAS</span>
-                  <p className="value text-2xl font-bold">0.00<sub className="text-xs">gw</sub></p>
+                  <p className="value text-2xl font-bold">0.00<sub className="text-xs">eth</sub></p>
                 </div>
                 <div className="stat">
                   <span className="title">TRANSACTIONS</span>

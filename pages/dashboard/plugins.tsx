@@ -68,15 +68,15 @@ const Plugins = () => {
   const pluginsStat = {
     id: "plugins",
     title: "Plugins",
-    transactionCount: 721_000,
-    rate: 11.01,
+    transactionCount: "0 of 5",
+    // rate: 0.00,
   };
 
   const feesStat = {
     id: "fees",
     title: "Total Fees",
-    fees: 239_000,
-    rate: -1.48,
+    fees: 0,
+    rate: 0.0,
   };
 
   const plugins = [
@@ -100,37 +100,29 @@ const Plugins = () => {
           <div className="form-control">
             <label htmlFor="name">Call data selector</label>
             <input
-              type="number"
+              type="text"
               name="call-data-selector"
               id="call-data-selector"
               className="form-input max-w-xs"
-              placeholder="0"
-            />
-          </div>
-          <div className="form-control">
-            <label htmlFor="name">Min message value</label>
-            <input
-              type="number"
-              name="strict-destination"
-              id="strict-destination"
-              className="form-input max-w-xs"
-              placeholder="0"
+              placeholder="Function Sig"
             />
           </div>
           <div className="form-control">
             <label htmlFor="name">Call data params</label>
             <div className="input-group">
               <input
-                type="text"
+                type="number"
                 name="call-data-params"
                 id="call-data-params"
                 className="form-input max-w-xs"
+                placeholder="Index"
               />
               <input
                 type="text"
                 name="call-data-params"
                 id="call-data-params"
                 className="form-input max-w-xs"
+                placeholder="Value"
               />
             </div>
           </div>
@@ -146,13 +138,13 @@ const Plugins = () => {
       formInputs: (
         <div className="form-body !grid !grid-cols-2">
           <div className="form-control">
-            <label htmlFor="name">Price feed</label>
+            <label htmlFor="name">Oracle Contract</label>
             <input
-              type="number"
+              type="text"
               name="price-feed"
               id="price-feed"
               className="form-input max-w-xs"
-              placeholder="0"
+              placeholder="Address"
             />
           </div>
           <div className="form-control">
@@ -168,11 +160,11 @@ const Plugins = () => {
           <div className="form-control">
             <label htmlFor="name">Fee Token</label>
             <input
-              type="number"
+              type="text"
               name="strict-destination"
               id="strict-destination"
               className="form-input max-w-xs"
-              placeholder="0"
+              placeholder="Address"
             />
           </div>
         </div>
@@ -208,11 +200,11 @@ const Plugins = () => {
           <div className="form-control">
             <label htmlFor="name">Rebate token</label>
             <input
-              type="number"
+              type="text"
               name="strict-destination"
               id="strict-destination"
               className="form-input max-w-xs"
-              placeholder="0"
+              placeholder="Address"
             />
           </div>
           <div className="form-control">
@@ -272,7 +264,7 @@ const Plugins = () => {
               <StatCard
                 title={pluginsStat.title}
                 contentText={pluginsStat.transactionCount.toString()}
-                rateInfo={pluginsStat.rate}
+                // rateInfo={pluginsStat.rate}
               />
               <StatCard
                 title={feesStat.title}
